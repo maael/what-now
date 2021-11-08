@@ -13,9 +13,13 @@ Players join a lobby on their phones like Jackbox, and then play through a "choo
 ### Development
 
 ```sh
+git clone git@github.com:maael/what-now.git
+cd what-now
 yarn prep
 yarn dev
 ```
+
+This will start the backend at http://localhost:8081, and the frontend at http://localhost:3000.
 
 ### Client
 

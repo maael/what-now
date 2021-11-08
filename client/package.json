@@ -30,6 +30,7 @@
     "next-seo": "^4.26.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "socket.io-client": "^4.3.2",
     "string-to-color": "^2.2.2",
     "tinycolor2": "^1.4.2"
   },

@@ -7,10 +7,16 @@
   "scripts": {
     "prep": "cd client && yarn && cd ../server && yarn && cd ..",
     "heroku-prebuild": "cd server && yarn install --frozen-lockfile --production=false && yarn build",
-    "heroku-cleanup": "cd server && yarn install --production --ignore-scripts --prefer-offline"
+    "heroku-cleanup": "cd server && yarn install --production --ignore-scripts --prefer-offline",
+    "dev": "run-p -l dev:client dev:server",
+    "dev:client": "cd client && yarn dev",
+    "dev:server": "cd server && yarn dev"
   },
   "cacheDirectories": [
     "server/node_modules"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
 }

@@ -6,13 +6,15 @@
   "license": "MIT",
   "scripts": {
     "build": "swc src -d dist",
+    "dev": "ts-node-dev src",
     "start": "node dist"
   },
   "devDependencies": {
     "@swc/cli": "^0.1.51",
     "@swc/core": "^1.2.107",
     "@types/node": "^16.11.6",
-    "ts-node-dev": "^1.1.8"
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.4.4"
   },
   "dependencies": {
     "socket.io": "^4.3.2"
