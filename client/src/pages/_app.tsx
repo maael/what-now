@@ -16,7 +16,7 @@ function App({ Component, pageProps }: AppProps) {
       </Head>
       <DefaultSeo {...SEO} />
       <Component {...pageProps} />
-      <EmojiFavicon emoji="🤖" />
+      <EmojiFavicon emoji="🕹" />
     </>
   )
 }

@@ -1,41 +1,86 @@
-# Next Template
+# What Now?
 
-A simple repo to act as a template for a Next.js project.
+## Inspiration
 
-Includes:
+Inspired by [What Next? Boardgame](https://boardgamegeek.com/boardgame/342443/what-next), [Reigns](https://store.steampowered.com/app/474750/Reigns/), and [Jackbox](https://www.jackboxgames.com/).
 
-- Next.js
-- TypeScript
-- Prettier
-- Eslint
-- Prettier + Eslint on commit
-- Fathom Analytics hook
-- next-seo
-- Sane CSS reset/starting point
+## Description
 
-## Usage
+Players join a lobby on their phones like Jackbox, and then play through a "choose your own adventure", voting together on options by swiping, and playing mini games that affect how it progresses.
 
-- Remove [GitHub workflow](./github/workflows/usage.yml) to track usage.
+## Tech Components
 
-<!-- TEMPLATE_LIST_START -->
-# 18 Repositories using template
+### Development
 
-* [maael/factory](https://github.com/maael/factory)
-* [maael/info](https://github.com/maael/info)
-* [maael/cached-proxy](https://github.com/maael/cached-proxy)
-* [maael/twitch-guild-wars-2-build-viewer](https://github.com/maael/twitch-guild-wars-2-build-viewer)
-* [maael/discord-slash-commands](https://github.com/maael/discord-slash-commands)
-* [maael/meow-are-you](https://github.com/maael/meow-are-you)
-* [maael/where-am-i](https://github.com/maael/where-am-i)
-* [maael/dessa-site](https://github.com/maael/dessa-site)
-* [maael/tweetem](https://github.com/maael/tweetem)
-* [maael/observatory](https://github.com/maael/observatory)
-* [maael/gh-short-url](https://github.com/maael/gh-short-url)
-* [maael/who-was](https://github.com/maael/who-was)
-* [maael/tilted](https://github.com/maael/tilted)
-* [maael/bopsy](https://github.com/maael/bopsy)
-* [maael/iono](https://github.com/maael/iono)
-* [Bodmass/guildy](https://github.com/Bodmass/guildy)
-* [maael/hydratwitch](https://github.com/maael/hydratwitch)
-* [maael/betrayal-game](https://github.com/maael/betrayal-game)
-<!-- TEMPLATE_LIST_END -->
+```sh
+yarn prep
+yarn dev
+```
+
+### Client
+
+[Next.js](https://nextjs.org/) client with [Tailwind](https://tailwindcss.com/) for styling, deployed to [Vercel](https://vercel.com/).
+
+### Server
+
+[Socket.io](https://socket.io/) server deployed to [Heroku](https://www.heroku.com/).
+
+## Game State/Screens
+
+```
+                    ┌────┐
+                 ┌──┤Join├──┐
+                 │  └────┘  │
+                 │          │
+ ┌┬─────┬┐   ┌───▼──────────┴───┐
+ ││Start│┼───►Waiting for Player│
+ └┴─────┴┘   └────────┬─────────┘
+                      │
+                ┌─────▼────┐
+                │Start Game│
+                └─────┬────┘
+                      │
+             ┌────────▼─────────┐
+┌─────┬──────►Assign Lead Player│
+│     │      └────────┬─────────┘
+│     │               │
+│     │        ┌──────▼──────┐
+│     │        │Vote Decision│
+│     │        └──────┬──────┘
+│     │               │
+│ ┌───┴────┐    ┌─────▼──────┐     ┌───────────────┐
+│ │Get Item◄────┤Resolve Vote├─────►Start Mini Game│
+│ └────────┘    └─────┬──────┘     └──────┬────────┘
+│                     │                   │
+│                     │             ┌─────▼──────┐
+│                     │             │Resolve Game│
+│                     │             └─────┬──────┘
+│            ┌────────▼─────────┐         │
+└────────────┤Draw Next Decision◄─────────┘
+             └──────────────────┘
+```
+
+## Tech Questions
+
+- How much game state to have in client?
+- How to handle game state in server? Worth using a state machine?
+- How to handle reconnects?
+- How to handle others viewing the active mini game?
+  - Stream screen or replay events.
+
+## Mini games
+
+- [ ] Sliding tile picture
+- [ ] Free the tile sliding game
+- [ ] Reaction time target tap game
+- [ ] Memory see and repeat game
+- [ ] Slide and land in zone game
+- [ ] Slide and land in moving zone game
+- [ ] Tap amount in X time
+- [ ] Flip coin
+- [ ] Memory matching card game
+- [ ] Item hunt in picture
+- [ ] Path through maze game
+- [ ] Spin tiles to connect pipe game
+- [ ] Use shapes to make a shape outline
+- [ ] Phone tilting/gyro marble maze game

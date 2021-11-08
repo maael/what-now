@@ -1,0 +1,7 @@
+{
+  "name": "what-now-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Matthew Elphick <matt.a.elphy@gmail.com> (https://mael.tech)",
+  "license": "MIT"
+}
