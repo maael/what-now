@@ -5,7 +5,12 @@
   "repository": "git@github.com:maael/what-now.git",
   "author": "Matthew Elphick <matt.a.elphy@gmail.com> (https://mael.tech)",
   "scripts": {
-    "prep": "cd client && yarn && cd ../server && yarn && cd .."
+    "prep": "cd client && yarn && cd ../server && yarn && cd ..",
+    "heroku-prebuild": "cd server && yarn install --frozen-lockfile --production=false && yarn build",
+    "heroku-cleanup": "cd server && yarn install --production --ignore-scripts --prefer-offline"
   },
+  "cacheDirectories": [
+    "server/node_modules"
+  ],
   "license": "MIT"
 }
