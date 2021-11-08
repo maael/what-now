@@ -3,5 +3,18 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "Matthew Elphick <matt.a.elphy@gmail.com> (https://mael.tech)",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build": "swc src -d dist",
+    "start": "node dist"
+  },
+  "devDependencies": {
+    "@swc/cli": "^0.1.51",
+    "@swc/core": "^1.2.107",
+    "@types/node": "^16.11.6",
+    "ts-node-dev": "^1.1.8"
+  },
+  "dependencies": {
+    "socket.io": "^4.3.2"
+  }
 }
