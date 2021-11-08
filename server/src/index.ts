@@ -1,18 +1,13 @@
 import server from "./server"
 import io from "./io"
-
-const PORT = process.env.PORT || 8081
-const CLIENT =
-  process.env.NODE_ENV === "development"
-    ? "http://localhost:3000"
-    : "https://what-now.vercel.app"
+import { CLIENT_URL, PORT } from "./util"
 
 io.attach(server, {
   pingInterval: 10000,
   pingTimeout: 5000,
   cookie: false,
   cors: {
-    origin: CLIENT,
+    origin: CLIENT_URL,
     methods: ["GET", "POST"],
   },
 })

@@ -1,8 +1,6 @@
 import * as React from 'react'
 import { io, Socket } from 'socket.io-client'
-
-const SOCKET_URL =
-  process.env.NODE_ENV === 'development' ? 'ws://localhost:8081' : 'wss://what-now-server.herokuapp.com'
+import { SOCKET_URL } from '~/util'
 
 export default function Game() {
   React.useEffect(() => {
