@@ -5,6 +5,8 @@
   --breakpont-xl: 1020px;
   --breakpont-2xl: 1536px;
   --desktop-only-display: none;
+  --color-background: theme('colors.purple.600');
+  --color-text: theme('colors.white');
 }
 
 @media screen and (min-width: 640px) {
