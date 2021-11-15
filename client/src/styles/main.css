@@ -3,6 +3,7 @@
 @tailwind utilities;
 @import 'variables.css';
 @import 'utilities.css';
+@import 'reset.css';
 
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
@@ -28,4 +29,7 @@ body,
   width: 100%;
 }
 
-@import 'reset.css';
+.card {
+  height: 40vmin;
+  width: 30vmin;
+}

@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { io, Socket } from 'socket.io-client'
+import CardSwiper from '~/components/primitives/CardSwiper'
 import { SOCKET_URL } from '~/util'
 
 export default function Game() {
@@ -31,5 +32,9 @@ export default function Game() {
       }
     }
   }, [])
-  return <main>Game</main>
+  return (
+    <main className="flex items-center justify-center h-full max-w-5xl py-5 m-auto">
+      <CardSwiper />
+    </main>
+  )
 }
