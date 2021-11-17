@@ -6,6 +6,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
+    "prebuild": "cp ../shared/types.ts src/sharedTypes.ts",
     "build": "next build",
     "start": "next start",
     "prettier": "prettier --ignore-path .gitignore --write .",

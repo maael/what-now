@@ -1,6 +1,5 @@
 import { useRouter } from 'next/router'
 import * as React from 'react'
-import CardSwiper from '~/components/primitives/CardSwiper'
 import PlayerAvatar from '~/components/primitives/PlayerAvatar'
 import { SERVER_URL } from '~/util'
 
@@ -49,9 +48,6 @@ export default function Index() {
           Join
         </button>
       </form>
-      <div className="flex items-center justify-center pt-10">
-        <CardSwiper />
-      </div>
     </main>
   )
 }
